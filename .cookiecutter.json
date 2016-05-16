@@ -1,0 +1,11 @@
+{
+    "library_name": "topology_lib_tftp_client",
+    "author": "maria alas",
+    "email": "maria.alas@hpe.com",
+    "repo_url": "https://github.com/maralas/topology_lib_tftp_client.git",
+    "doc_url": "https://github.com/maralas/topology_lib_tftp_client.git/tree/master/doc",
+    "project_name": "topology_lib_tftp_client",
+    "short_description": "TFTP function for client side",
+    "year": "2016",
+    "version": "0.1.0"
+}
