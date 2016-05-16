@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2016 Maria Alas
+# Copyright (C) 2016 Hewlett Packard Enterprise Development LP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,44 +23,34 @@ from __future__ import unicode_literals, absolute_import
 from __future__ import print_function, division
 
 import re
-# Add your library functions here.
 
 
 def send_tftp_command(enode, remote_host, c, four=False, six=False,
                       l=False, m=None, r=False, v=False, background=False,
                       shell='bash'):
     """
-    This function will execute TFTP command in bash.
+    This function will execute TFTP command for a client in bash.
 
-      -four: -4, Connect with IPv4 only, even if IPv6 support was compiled in.
-
-      -six: -6 Connect with IPv6 only, if compiled in.
-
-      -c: -c command
-              Execute  command  as  if it had been entered on the tftp prompt.
-              Must be specified last on the command line.
-
-      -l: -l  Default to literal mode. Used to avoid special processing of ':'
-              in a file name.
-
-      -m: -m mode
-              Set  the  default  transfer  mode to mode.  This is usually used
-              with -c.
-
-      -r: -R port:port
-              Force the originating port number to be in the  specified  range
-              of port numbers.
-
-       -v: -v     Default to verbose mode.
-
-       -background: & Run command in the background
+    :param enode: Engine node to communicate with.
+    :type enode: topology.platforms.base.BaseNode
+    :param bool four: Connect with IPv4 only, even if IPv6 support was
+    compiled in.
+    :param bool six: -6 Connect with IPv6 only, if compiled in.
+    :param str c: -c command Execute  command  as  if it had been entered on
+    the tftp prompt.
+    must be specified last on the command line.
+    :param bool l: -l  Default to literal mode. Used to avoid special
+    processing of ':' in a file name.
+    :param str m: -m mode. Set  the  default  transfer  mode to mode.
+    This is usually used with -c.
+    :param bool r: -R port Force the originating port number to be in the
+    specified  range of port numbers.
+    :param bool v: -v Default to verbose mode.
+    :param bool background: & Run command in the background
+    :param str shell: Shell name to execute commands. If ``None``, use the
+    Engine Node default shell.
+    :return: if background is set as true, it will return ppid of the process
     """
-    pass
-
-    # This function will execute TFTP command in bash:
-    #
-    # command = 'tftp {host_ip} -c get file.txt file.txt
-    #
 
     arguments = locals()
 
@@ -102,6 +92,4 @@ def send_tftp_command(enode, remote_host, c, four=False, six=False,
                                 'unexpected response {0}'.format(tftp_response)
 
 
-__all__ = [
-    'send_tftp_command'
-]
+__all__ = ['send_tftp_command']
